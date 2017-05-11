@@ -1,5 +1,13 @@
 # vue-webpack-boilerplate
 
+# what's new?
+
+- add vuex support
+
+- add i18n support 
+
+- add config support
+
 > A full-featured Webpack setup with hot-reload, lint-on-save, unit testing & css extraction.
 
 > This template is Vue 2.0 compatible. For Vue 1.x use this command: `vue init webpack#1.0 my-project`
