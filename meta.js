@@ -56,6 +56,26 @@ module.exports = {
       "type": "confirm",
       "message": "Generate environment specific config file? (via Proxy)"
     },
+    "toast": {
+      "type": "confirm",
+      "message": "Add pre-configured toast support?"
+    },
+    "toastConfig": {
+      "when": "toast",
+      "type": "list",
+      "message": "Pick a toast implementation",
+      "choices": [
+        {
+          "name": "vue-toasted (https://github.com/shakee93/vue-toasted)",
+          "value": "vue-toasted",
+          "short": "vue-toasted"
+        }
+      ]
+    },
+    "postcss": {
+      "type": "confirm",
+      "message": "Use PostCSS?"
+    },
     "lint": {
       "type": "confirm",
       "message": "Use ESLint to lint your code?"
@@ -94,6 +114,8 @@ module.exports = {
   "filters": {
     ".eslintrc.js": "lint",
     ".eslintignore": "lint",
+    "src/postcss.config.js": "postcss",
+    "main.postcss": "postcss",
     "config/test.env.js": "unit || e2e",
     "test/unit/**/*": "unit",
     "build/webpack.test.conf.js": "unit",

@@ -10,6 +10,17 @@ import router from './router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{#vuex}}
 import store from './store'
 {{/vuex}}
+{{#toast}}
+import Toasted from 'vue-toasted'
+const option = {
+  position: 'top-center',
+  className: 'my-toast'
+}
+Vue.use(Toasted, option)
+{{#if_eq toastConfig "vue-toasted"}}
+{{#postcss}}
+import './main.postcss'
+{{/postcss}}
 {{#i18n}}
 import VueI18n from 'vue-i18n'
 import locales from './locales.js'
