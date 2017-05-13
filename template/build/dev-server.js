@@ -13,6 +13,8 @@ var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = {{#if_or unit e2e}}process.env.NODE_ENV === 'testing'
   ? require('./webpack.prod.conf')
   : {{/if_or}}require('./webpack.dev.conf')
+var devDataRouter = require('./dev-data-router')
+var router = express.Router()
 
 // default port where dev server listens for incoming traffic
 var port = process.env.PORT || config.dev.port
@@ -23,6 +25,8 @@ var autoOpenBrowser = !!config.dev.autoOpenBrowser
 var proxyTable = config.dev.proxyTable
 
 var app = express()
+app.use('/data', router)
+devDataRouter(app, router)
 var compiler = webpack(webpackConfig)
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
