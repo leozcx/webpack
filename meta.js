@@ -52,6 +52,10 @@ module.exports = {
       "type": "confirm",
       "message": "Use vue-i18n?"
     },
+    "config": {
+      "type": "confirm",
+      "message": "Generate environment specific config file? (via Proxy)"
+    },
     "lint": {
       "type": "confirm",
       "message": "Use ESLint to lint your code?"
@@ -96,7 +100,8 @@ module.exports = {
     "test/e2e/**/*": "e2e",
     "src/router/**/*": "router",
     "src/store.js": "vuex",
-    "src/locales.js": "i18n"
+    "src/locales.js": "i18n",
+    "src/config.js": "config"
   },
   "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
 };
