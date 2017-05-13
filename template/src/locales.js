@@ -1,6 +1,6 @@
 const locales = {
-  zh: {
-    msg: "this is msg 1"
+  'zh-CN': {
+    msg: 'this is msg 1'
   }
 }
 export default locales

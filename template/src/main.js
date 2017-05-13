@@ -11,12 +11,13 @@ import router from './router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import store from './store'
 {{/vuex}}
 {{#i18n}}
-import VueI18N from 'vue-i18n'
+import VueI18n from 'vue-i18n'
 import locales from './locales.js'
 Vue.use(VueI18n)
-Vue.config.lang = 'zh'
-Object.keys(locales).forEach((lang) => {
-  Vue.locale(lang, locales[lang])
+const lang = navigator.language || navigator.userLanguage || 'zh-CN'
+const i18n = new VueI18n({
+  locale: lang,
+  locales
 })
 {{/i18n}}
 
@@ -29,8 +30,11 @@ new Vue({
   router,
   {{/router}}
   {{#vuex}}
-  store, 
+  store,
   {{/vuex}}
+  {{#i18n}}
+  i18n,
+  {{/i18n}}
   {{#if_eq build "runtime"}}
   render: h => h(App){{#if_eq lintConfig "airbnb"}},{{/if_eq}}
   {{/if_eq}}
