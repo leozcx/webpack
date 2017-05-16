@@ -18,7 +18,7 @@
     "vue": "^2.2.6"{{#router}},
     "vue-router": "^2.3.1"{{/router}}{{#vuex}},
     "vuex": "^2.3.1"{{/vuex}}{{#i18n}},
-    "vue-i18n": "^6.1.1"{{/i18n}}{{#toast}}{{#if_eq toastConfig "vue-toasted"}},
+    "vue-i18n": "^6.1.1"{{/i18n}}{{#toast}},{{#if_eq toastConfig "vue-toasted"}}
     "vue-toasted": "^1.0.27"{{/if_eq}}{{/toast}}
   },
   "devDependencies": {
