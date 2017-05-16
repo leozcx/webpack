@@ -76,6 +76,10 @@ module.exports = {
       "type": "confirm",
       "message": "Use PostCSS?"
     },
+    "flow": {
+      "type": "confirm",
+      "message": "Use Flow.js as static type checker?"
+    },
     "lint": {
       "type": "confirm",
       "message": "Use ESLint to lint your code?"
@@ -112,6 +116,7 @@ module.exports = {
     }
   },
   "filters": {
+    ".flowconfig": "flow",
     ".eslintrc.js": "lint",
     ".eslintignore": "lint",
     "src/postcss.config.js": "postcss",
