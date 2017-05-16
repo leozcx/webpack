@@ -8,6 +8,12 @@
 # install dependencies
 npm install
 
+# [optional] if you use Flow.js
+npm run flowInit
+
+# use flow
+npm run flow
+
 # serve with hot reload at localhost:8080
 npm run dev
 
