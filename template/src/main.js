@@ -11,14 +11,15 @@ import router from './router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import store from './store'
 {{/vuex}}
 {{#toast}}
+{{#if_eq toastConfig "vue-toasted"}}
 import Toasted from 'vue-toasted'
 const option = {
   position: 'top-center',
   className: 'my-toast'
 }
 Vue.use(Toasted, option)
+{{/if_eq}}
 {{/toast}}
-{{#if_eq toastConfig "vue-toasted"}}
 {{#postcss}}
 import './main.postcss'
 {{/postcss}}
