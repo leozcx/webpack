@@ -17,6 +17,7 @@ const option = {
   className: 'my-toast'
 }
 Vue.use(Toasted, option)
+{{/toast}}
 {{#if_eq toastConfig "vue-toasted"}}
 {{#postcss}}
 import './main.postcss'

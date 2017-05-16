@@ -56,6 +56,30 @@ module.exports = {
       "type": "confirm",
       "message": "Generate environment specific config file? (via Proxy)"
     },
+    "toast": {
+      "type": "confirm",
+      "message": "Add pre-configured toast support?"
+    },
+    "toastConfig": {
+      "when": "toast",
+      "type": "list",
+      "message": "Pick a toast implementation",
+      "choices": [
+        {
+          "name": "vue-toasted (https://github.com/shakee93/vue-toasted)",
+          "value": "vue-toasted",
+          "short": "vue-toasted"
+        }
+      ]
+    },
+    "postcss": {
+      "type": "confirm",
+      "message": "Use PostCSS?"
+    },
+    "flow": {
+      "type": "confirm",
+      "message": "Use Flow.js as static type checker?"
+    },
     "lint": {
       "type": "confirm",
       "message": "Use ESLint to lint your code?"
@@ -92,15 +116,19 @@ module.exports = {
     }
   },
   "filters": {
+    ".flowconfig": "flow",
     ".eslintrc.js": "lint",
     ".eslintignore": "lint",
+    "src/postcss.config.js": "postcss",
+    "main.postcss": "postcss",
     "config/test.env.js": "unit || e2e",
     "test/unit/**/*": "unit",
     "build/webpack.test.conf.js": "unit",
     "test/e2e/**/*": "e2e",
     "src/router/**/*": "router",
     "src/store.js": "vuex",
-    "src/locales.js": "i18n"
+    "src/locales.js": "i18n",
+    "src/config.js": "config"
   },
   "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
 };
