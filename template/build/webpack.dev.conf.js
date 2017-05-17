@@ -5,6 +5,9 @@ var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+{{#flow}}
+var FlowStatusWebpackPlugin = require('flow-status-webpack-plugin')
+{{/flow}}
 
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
@@ -18,6 +21,11 @@ module.exports = merge(baseWebpackConfig, {
   // cheap-module-eval-source-map is faster for development
   devtool: '#cheap-module-eval-source-map',
   plugins: [
+    {{#flow}}
+    new FlowStatusWebpackPlugin({
+      failOnError: true
+    }),
+    {{/flow}}
     new webpack.DefinePlugin({
       'process.env': config.dev.env
     }),
