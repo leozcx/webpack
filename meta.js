@@ -76,6 +76,10 @@ module.exports = {
       "type": "confirm",
       "message": "Use PostCSS?"
     },
+    "fontawesome": {
+      "type": "confirm",
+      "message": "Use Font Awesome?"
+    },
     "flow": {
       "type": "confirm",
       "message": "Use Flow.js as static type checker?"
@@ -121,6 +125,7 @@ module.exports = {
     ".eslintignore": "lint",
     "src/postcss.config.js": "postcss",
     "main.postcss": "postcss",
+    "font-awesome.config*": "fontawesome",
     "config/test.env.js": "unit || e2e",
     "test/unit/**/*": "unit",
     "build/webpack.test.conf.js": "unit",

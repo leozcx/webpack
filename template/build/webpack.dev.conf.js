@@ -4,6 +4,9 @@ var config = require('../config')
 var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+{{#fontawesome}}
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+{{/fontawesome}}
 var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 {{#flow}}
 var FlowStatusWebpackPlugin = require('flow-status-webpack-plugin')
@@ -38,6 +41,9 @@ module.exports = merge(baseWebpackConfig, {
       template: 'index.html',
       inject: true
     }),
-    new FriendlyErrorsPlugin()
+    new FriendlyErrorsPlugin(){{#fontawesome}},
+    new ExtractTextPlugin({
+      filename: '[name]-[chunkhash].css', allChunks: true,
+    }){{/fontawesome}}
   ]
 })

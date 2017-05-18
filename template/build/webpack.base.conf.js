@@ -2,6 +2,9 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
+{{#fontawesome}}
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+{{/fontawesome}}
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -65,7 +68,21 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      }
+      }{{#fontawesome}},
+      {
+        test: /font-awesome\.config\.js/,
+        use: [
+          { loader: 'style-loader'  },
+          { loader: 'font-awesome-loader'  },
+        ],
+      },
+      {
+        test: /\.s?css/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [ 'css-loader', 'sass-loader'  ]
+        })
+      }{{/fontawesome}}
     ]
   }
 }

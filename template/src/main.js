@@ -23,6 +23,9 @@ Vue.use(Toasted, option)
 {{#postcss}}
 import './main.postcss'
 {{/postcss}}
+{{#fontawesome}}
+import '../font-awesome.config'
+{{/fontawesome}}
 {{#i18n}}
 import VueI18n from 'vue-i18n'
 import locales from './locales.js'

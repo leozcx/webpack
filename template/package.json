@@ -20,7 +20,9 @@
     "vue-router": "^2.3.1"{{/router}}{{#vuex}},
     "vuex": "^2.3.1"{{/vuex}}{{#i18n}},
     "vue-i18n": "^6.1.1"{{/i18n}}{{#toast}},{{#if_eq toastConfig "vue-toasted"}}
-    "vue-toasted": "^1.0.27"{{/if_eq}}{{/toast}}
+    "vue-toasted": "^1.0.27"{{/if_eq}}{{/toast}}{{#fontawesome}},
+    "font-awesome": "^4.7.0"
+    {{/fontawesome}}
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
@@ -49,6 +51,11 @@
     "postcss-loader": "^2.0.5",
     "cssnext": "^1.8.4",
     {{/postcss}}
+    {{#fontawesome}}
+    "font-awesome-loader": "^1.0.2",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.17.0",
+    {{/fontawesome}}
     {{#lint}}
     "eslint": "^3.19.0",
     "eslint-friendly-formatter": "^2.0.7",
