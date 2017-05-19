@@ -80,6 +80,10 @@ module.exports = {
       "type": "confirm",
       "message": "Use Font Awesome?"
     },
+    "axios": {
+      "type": "confirm",
+      "message": "Use axios as Ajax lib?"
+    },
     "flow": {
       "type": "confirm",
       "message": "Use Flow.js as static type checker?"
