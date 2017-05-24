@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
+    "stage": "node build/dev-server.js stage",
     "start": "node build/dev-server.js",
     "flow": "node node_modules/flow-bin/cli.js",
     "flowInit": "node node_modules/flow-typed/dist/cli.js install",

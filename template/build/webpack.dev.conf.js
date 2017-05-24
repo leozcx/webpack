@@ -17,6 +17,8 @@ Object.keys(baseWebpackConfig.entry).forEach(function (name) {
   baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
 })
 
+let configEnv = config.dev.env
+configEnv.NODE_ENV = `"${process.env.NODE_ENV}"`
 module.exports = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
@@ -30,7 +32,7 @@ module.exports = merge(baseWebpackConfig, {
     }),
     {{/flow}}
     new webpack.DefinePlugin({
-      'process.env': config.dev.env
+      'process.env': configEnv
     }),
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
     new webpack.HotModuleReplacementPlugin(),
