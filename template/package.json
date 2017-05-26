@@ -54,6 +54,7 @@
     "postcss": "^6.0.1",
     "postcss-loader": "^2.0.5",
     "cssnext": "^1.8.4",
+    "node-sass": "^4.5.3",
     {{/postcss}}
     {{#fontawesome}}
     "font-awesome-loader": "^1.0.2",

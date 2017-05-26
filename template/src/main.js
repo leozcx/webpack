@@ -28,12 +28,11 @@ import '../font-awesome.config'
 {{/fontawesome}}
 {{#i18n}}
 import VueI18n from 'vue-i18n'
-import locales from './locales.js'
+import { messages, lang } from './locales.js'
 Vue.use(VueI18n)
-const lang = navigator.language || navigator.userLanguage || 'zh-CN'
 const i18n = new VueI18n({
   locale: lang,
-  locales
+  messages
 })
 {{/i18n}}
 
