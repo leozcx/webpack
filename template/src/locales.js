@@ -1,5 +1,5 @@
 const lang = navigator.language || navigator.userLanguage || 'zh-CN'
-const locales = {
+const messages = {
   'zh-CN': {
     msg: 'this is msg 1'
   }
