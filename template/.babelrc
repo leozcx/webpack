@@ -1,6 +1,7 @@
 {
   "presets": [
-    "flow",
+    {{#flow}}
+    "flow",{{/flow}}
     ["env", { "modules": false }],
     "stage-2"
   ],
