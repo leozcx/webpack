@@ -86,7 +86,8 @@ module.exports = {
     },
     "flow": {
       "type": "confirm",
-      "message": "Use Flow.js as static type checker?"
+      "message": "Use Flow.js as static type checker?",
+      "default": false
     },
     "lint": {
       "type": "confirm",
